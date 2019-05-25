@@ -42,6 +42,13 @@ body
     background-color: #512DA8;
   }
   
-  .reserve-table {
+.reserve-table {
     background-color: #e29c36;
     color: white;
+}
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
