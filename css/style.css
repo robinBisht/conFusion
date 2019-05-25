@@ -38,3 +38,10 @@ body
 .navbar-dark{
     background-color: #512DA8; 
 }
+.navbar-inverse {
+    background-color: #512DA8;
+  }
+  
+  .reserve-table {
+    background-color: #e29c36;
+    color: white;
