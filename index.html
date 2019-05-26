@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">    
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="css/bootstrap-social.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -58,7 +58,7 @@
             </div>
         </div>
         </div>
-    </header>
+  
 
     <div class="container">
 
@@ -107,7 +107,7 @@
                                                         <dd class="col-12 col-sm-9">
                                                                     
                                                             <div class="col-sm-9 col-md-9 input-group">
-                                                                <label class="radio-inline" style="padding-left">
+                                                                <label class="radio-inline" style="padding-left:30px;">
                                                                     <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
                                                                 </label>
                                                                 <label class="radio-inline">
@@ -170,8 +170,8 @@
                             </div>
                         </div>
                 </div>
-
-
+              </header>
+<div class="container">
             <div class="row row-content">
                     <div class="col">
                             <div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -221,9 +221,16 @@
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </a>                        
+                        
+                            <button class="btn btn-danger btn-sm" id="carouselButton">
+                              <span class="fa fa-pause"></span>
+                            </button>
+                           
+            
+           
                     </div>
                 </div>
-    
+              </div>
 
             <ol class="col-12 breadcrumb">
                     <li class="breadcrumb-item">Home</li>
@@ -329,8 +336,26 @@
     </footer>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/tether/dist/js/tether.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+       $(document).ready(function(){
+            $("#mycarousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+              if($('#carouselButton').children('span').hasClass('fa-pause')){
+                $("#mycarousel").carousel('pause');
+                $('#carouselButton').children('span').removeClass('fa-pause');
+                $('#carouselButton').children('span').addClass('fa-play');
+              }
+                else{
+                  $("#mycarousel").carousel('cycle');
+                $('#carouselButton').children('span').removeClass('fa-play');
+                $('#carouselButton').children('span').addClass('fa-pause');
+                }
+            });
+           
+        });
+    </script>
   </body>
 </html>
